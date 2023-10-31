@@ -1,30 +1,18 @@
-import Cabecalho from "./components/Cabecalho";
-
+import Cabecalho from "./components/cabecalho/cabecalho";
+import Rodape from "./components/Rodape";
+import { Outlet } from "react-router-dom";
+import styles from "./App.module.css";
 
 export default function App() {
+  //Lista de links redes sociais
+
   return (
     <>
-      <div className="container">
-
-
-        <Cabecalho/>
-
-        <header>
-          <h1>Viti + React</h1>
-        </header>
-
-        <section>
-          {/*thisis a comment*/}
-          <p><a href="/">Home Page</a></p>
-          <button onClick={() => alert("Hellow Word")}
-          >Click Me!</button>
-        </section>
-
-        <footer>
-          <p>&copy;2021</p>
-        </footer>
+      <div className={styles.container}>
+        <Cabecalho />
+          <Outlet />
+        <Rodape/>
       </div>
-   
     </>
-  )
+  );
 }
